@@ -497,13 +497,13 @@
   #if ENABLED(PID_PARAMS_PER_HOTEND)
     // Specify between 1 and HOTENDS values per array.
     // If fewer than EXTRUDER values are provided, the last element will be repeated.
-    #define DEFAULT_Kp_LIST {  20.37,  22.20 }
-    #define DEFAULT_Ki_LIST {   1.37,   1.08 }
-    #define DEFAULT_Kd_LIST { 75.96, 114.00 }
+    #define DEFAULT_Kp_LIST {  54.64,  22.20 }
+    #define DEFAULT_Ki_LIST {   10.52,   1.08 }
+    #define DEFAULT_Kd_LIST { 70.98, 114.00 }
   #else
-    #define DEFAULT_Kp  22.20
-    #define DEFAULT_Ki   1.08
-    #define DEFAULT_Kd 114.00
+    #define DEFAULT_Kp  54.64
+    #define DEFAULT_Ki   10.52
+    #define DEFAULT_Kd 70.98
   #endif
 #endif // PIDTEMP
 
@@ -663,7 +663,7 @@
   // Make delta curves from many straight lines (linear interpolation).
   // This is a trade-off between visible corners (not enough segments)
   // and processor overload (too many expensive sqrt calls).
-  #define DELTA_SEGMENTS_PER_SECOND 240
+  #define DELTA_SEGMENTS_PER_SECOND 160
 
   // After homing move down to a height where XY movement is unconstrained
   //#define DELTA_HOME_TO_SAFE_ZONE
@@ -874,7 +874,7 @@
  * Override with M201
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_ACCELERATION      { 2000, 2000, 2000, 4000 }
+#define DEFAULT_MAX_ACCELERATION      { 2000, 2000, 2000, 10000 }
 
 //#define LIMITED_MAX_ACCEL_EDITING     // Limit edit via M201 or LCD to DEFAULT_MAX_ACCELERATION * 2
 #if ENABLED(LIMITED_MAX_ACCEL_EDITING)
